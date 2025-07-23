@@ -1,0 +1,317 @@
+html, body {
+  overflow-x: visible !important;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, Arial, sans-serif, "Edge";
+  background: #2d1404;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-image: url(neww.png);
+  background-attachment: fixed;
+  display: flex;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 3vw;
+  overflow: hidden;
+}
+
+.hero-content {
+  margin-top: 40px;
+}
+
+.hero-title {
+  font-size: 7vw;
+  color: #ff5c00;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.hero-handle {
+  font-size: 2vw;
+  color: #fff;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.hero-nav {
+  position: absolute;
+  top: 40px;
+  right: 3vw;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 2em;
+  padding: 0.7em 2em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+  background: #ff5c00;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.btn-primary:hover {
+  background: #ff7f32;
+}
+
+.btn-menu {
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  position: relative;
+}
+.btn-menu .hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-left: 8px;
+}
+.btn-menu .hamburger span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #111;
+  border-radius: 1em;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  display: none;
+  flex-direction: column;
+  min-width: 160px;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.dropdown-menu.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  font-size: 1.1em;
+  border-bottom: 1px solid #222;
+  transition: background 0.2s;
+}
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+.dropdown-menu a:hover {
+  background: #222;
+}
+
+.hero-bottom-left {
+  position: absolute;
+  left: 3vw;
+  bottom: 8vh;
+}
+.hero-bottom-left h2 {
+  font-size: 2.5vw;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+}
+
+.hero-bottom-right {
+  position: absolute;
+  right: 3vw;
+  bottom: 8vh;
+  color: #bdbdbd;
+  font-size: 1.2vw;
+  text-align: right;
+}
+
+/* Projects Intro Section */
+.projects-intro {
+  background: #ff5c00;
+  color: #000;
+  padding: 6vw 3vw 4vw 3vw;
+  position: relative;
+}
+.projects-intro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.projects-intro-content h2 {
+  font-size: 3vw;
+  font-weight: 700;
+  margin: 0 0 2vw 0;
+  max-width: 60vw;
+}
+.btn-secondary {
+  background: #000;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 2em;
+  padding: 0.7em 2.5em;
+  font-weight: 400;
+  margin-top: 1vw;
+}
+.projects-intro-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vw;
+  gap: 2vw;
+}
+.projects-intro-bottom p {
+  font-size: 1.4vw;
+  color: #fff;
+  max-width: 40vw;
+}
+
+/* Photoshop Gallery Section */
+.photoshop-gallery {
+  background-image: url(neww.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 5vw 5vw 6vw 3vw;
+  position: relative;
+}
+.gallery-title {
+  color: #fff;
+  font-size: 2.8vw;
+  font-weight: 700;
+  text-align: right;
+  margin: 0 0 2vw 0;
+}
+.gallery-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 2vw;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1vw;
+  z-index: 1000;
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+.gallery-row.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+.gallery-card {
+  flex: 0 0 auto;
+  height: 580px;
+  min-width: 350px;
+  max-width: 600px;
+  background: none;
+  border-radius: 1vw;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  scroll-snap-align: start;
+}
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery-card:hover {
+  /* No hover animation */
+}
+
+/* Hide scrollbar for webkit browsers */
+.gallery-row::-webkit-scrollbar {
+  height: 12px;
+  background: #222;
+}
+.gallery-row::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+.gallery-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .hero-title { font-size: 12vw; }
+  .hero-handle { font-size: 4vw; }
+  .hero-bottom-left h2, .hero-bottom-right { font-size: 3.5vw; }
+  .projects-intro-content h2 { font-size: 6vw; }
+  .projects-intro-bottom p { font-size: 2.5vw; }
+  .gallery-title { font-size: 5vw; }
+  .gallery-card { height: 260px; min-width: 200px; max-width: 320px; }
+  .gallery-row { gap: 4vw; }
+}
+@media (max-width: 600px) {
+  .hero {
+    padding: 0 5vw;
+  }
+  .hero-nav {
+    top: 20px;
+    right: 5vw;
+    gap: 12px;
+  }
+  .hero-title { font-size: 16vw; }
+  .hero-handle { font-size: 6vw; }
+  .hero-bottom-left, .hero-bottom-right {
+    position: static;
+    text-align: left;
+    margin: 2vw 0;
+  }
+  .projects-intro {
+    padding: 10vw 5vw 6vw 5vw;
+  }
+  .projects-intro-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .projects-intro-content h2 {
+    font-size: 9vw;
+    max-width: 100%;
+  }
+  .btn-secondary {
+    margin-top: 4vw;
+  }
+  .projects-intro-bottom {
+    flex-direction: column;
+    gap: 3vw;
+  }
+  .projects-intro-bottom p {
+    font-size: 4vw;
+    max-width: 100%;
+  }
+  .photoshop-gallery { padding: 10vw 5vw 10vw 5vw; }
+  .gallery-row {
+    gap: 6vw;
+    padding-bottom: 3vw;
+  }
+  .gallery-card { height: 180px; min-width: 140px; max-width: 220px; }
+} 
