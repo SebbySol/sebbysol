@@ -155,7 +155,7 @@ body {
   text-align: right;
 }
 
-/* Projects Intro Section */
+/* Intro */
 .projects-intro {
   background: #ff5c00;
   color: #000;
@@ -195,21 +195,21 @@ body {
   max-width: 40vw;
 }
 
-/* Photoshop Gallery Section */
+/* Photoshop */
 .photoshop-gallery {
   background-image: url(neww.png);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  padding: 5vw 5vw 6vw 3vw;
+  padding: 5vw 0vw 6vw 3vw;
   position: relative;
 }
 .gallery-title {
   color: #fff;
-  font-size: 2.8vw;
-  font-weight: 700;
+  font-size: 4vw;
+  font-weight: 500;
   text-align: right;
-  margin: 0 0 2vw 0;
+  margin: -2vw 3vw 3vw 0vw;
 }
 .gallery-row {
   display: flex;
@@ -247,7 +247,7 @@ body {
   display: block;
 }
 .gallery-card:hover {
-  /* No hover animation */
+  color: #ff5c00;
 }
 
 /* Hide scrollbar for webkit browsers */
@@ -277,46 +277,243 @@ body {
 }
 @media (max-width: 600px) {
   .hero {
-    padding: 0 5vw;
-  }
-  .hero-nav {
-    top: 20px;
-    right: 5vw;
-    gap: 12px;
-  }
-  .hero-title { font-size: 16vw; }
-  .hero-handle { font-size: 6vw; }
-  .hero-bottom-left, .hero-bottom-right {
-    position: static;
-    text-align: left;
-    margin: 2vw 0;
-  }
-  .projects-intro {
-    padding: 10vw 5vw 6vw 5vw;
-  }
-  .projects-intro-content {
     flex-direction: column;
     align-items: flex-start;
+    padding: 20px 10px;
+    height: auto;
+  }
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-handle {
+    font-size: 1.2rem;
+  }
+  .hero-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .btn, .btn-primary, .btn-secondary, .btn-menu {
+    font-size: 1rem;
+    padding: 10px 18px;
+    margin-bottom: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .hero-bottom-left, .hero-bottom-right {
+    position: static;
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: left;
+  }
+  .projects-intro {
+    padding: 30px 10px;
   }
   .projects-intro-content h2 {
-    font-size: 9vw;
-    max-width: 100%;
+    font-size: 2rem;
+    line-height: 2.3rem;
   }
   .btn-secondary {
-    margin-top: 4vw;
-  }
-  .projects-intro-bottom {
-    flex-direction: column;
-    gap: 3vw;
+    font-size: 1rem;
+    padding: 10px 18px;
+    margin: 20px 0 10px 0;
+    width: 100%;
   }
   .projects-intro-bottom p {
-    font-size: 4vw;
-    max-width: 100%;
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
-  .photoshop-gallery { padding: 10vw 5vw 10vw 5vw; }
+  .gallery-section {
+    padding: 20px 0 0 0;
+  }
+  .gallery-title {
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
   .gallery-row {
-    gap: 6vw;
-    padding-bottom: 3vw;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
   }
-  .gallery-card { height: 180px; min-width: 140px; max-width: 220px; }
+  .gallery-card {
+    min-width: 140px;
+    max-width: 140px;
+    margin: 0;
+  }
+  .gallery-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  .illustrator-section {
+    height: 50vh;
+    min-height: 220px;
+    padding: 0;
+  }
+  .illustrator-title {
+    font-size: 2.5rem;
+    margin: 30px 0 0 20px;
+  }
+  .illustrator-view-more {
+    top: 30px;
+    right: 20px;
+    font-size: 1rem;
+  }
+} 
+
+.illustrator-section {
+  position: relative;
+  width: 100vw;
+  background: #f45a06;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.illustrator-title {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 4vw;
+  font-weight: 600;
+  color: #000000;
+  margin: 60px 0 45px 50px;
+}
+
+.illustrator-view-more {
+  position: absolute;
+  top: 95px;
+  right: 60px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #111;
+  text-decoration: none;
+  font-weight: 400;
+} 
+
+.boxes-grid-section {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+.boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  padding: 0px;
+}
+.box {
+  background: #000;
+  border: 8px solid #f45a06;
+  overflow: hidden;
+  position: relative;
+}
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+/* Custom placement and sizing for each box to match the layout */
+.box1 { grid-column: 1 / 2; grid-row: 1 / 3; }
+.box2 { grid-column: 2 / 4; grid-row: 1 / 2; }
+.box3 { grid-column: 4 / 5; grid-row: 1 / 3; }
+.box4 { grid-column: 2 / 3; grid-row: 2 / 4; }
+.box5 { grid-column: 3 / 4; grid-row: 2 / 3; }
+.box6 { grid-column: 4 / 5; grid-row: 3 / 4; }
+.box7 { grid-column: 3 / 5; grid-row: 3 / 4; }
+.box8 { grid-column: 1 / 2; grid-row: 3 / 4; }
+
+/* Illustrator works box */
+.box1 {
+  
+}
+.box2 {
+  
+}
+.box3 {
+  
+}
+.box4 {
+  
+}
+.box5 {
+  
+}
+.box6 {
+  
+}
+.box7 {
+  
+}
+.box8 {
+/* Custom styles for box8 */
+}
+
+@media (max-width: 900px) {
+  .boxes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 120px);
+  }
+  .box1 { grid-column: 1 / 2; grid-row: 1 / 3; }
+  .box2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+  .box3 { grid-column: 2 / 3; grid-row: 2 / 4; }
+  .box4 { grid-column: 1 / 2; grid-row: 3 / 4; }
+  .box5 { grid-column: 2 / 3; grid-row: 4 / 5; }
+  .box6 { grid-column: 1 / 2; grid-row: 4 / 5; }
+  .box7 { grid-column: 1 / 3; grid-row: 5 / 6; }
+  .box8 { display: none; }
+}
+
+@media (max-width: 600px) {
+  .boxes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+  }
+  .box {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    height: 80px;
+    border-width: 4px;
+  }
+  .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
+  .boxes-grid-section {
+    padding: 0;
+  }
+  .illustrator-section {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 30px;
+  }
+  .illustrator-title {
+    font-size: 1.5rem;
+    margin: 30px 0 10px 20px;
+  }
+  .illustrator-view-more {
+    position: static;
+    display: block;
+    margin: 0 0 0 20px;
+    font-size: 1rem;
+    padding-bottom: 10px;
+  }
 } 
