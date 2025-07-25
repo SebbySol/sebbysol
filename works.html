@@ -10,15 +10,20 @@
 <body>
   
 <section class="gallery-section photoshop-gallery">
-  <nav class="simple-nav" style="display: flex; justify-content: space-between; align-items: center; padding: 0 1em 32px 1em; margin: 0 0 32px 0; background: none; box-shadow: none;">
-    <a href="index.html" class="btn" style="background: none; color: #111; box-shadow: none;">Home</a>
+  <nav class="simple-nav">
+    <a href="index.html" class="btn simple-nav-home">Home</a>
     <div style="flex: 1;"></div>
-    <button class="btn btn-menu" id="menuBtn" style="background: none; color: #111; box-shadow: none;">
+    <button class="btn btn-menu simple-nav-menu" type="button">
       <span>Menu</span>
       <span class="hamburger">
         <span></span><span></span><span></span>
       </span>
     </button>
+    <div class="dropdown-menu">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
   <h2 class="gallery-title">Photoshop</h2>
   <div class="gallery-row">
@@ -50,8 +55,10 @@
           <a href="BMTH.png" target="_blank" class="card-hover-container">
             <img src="BMTH.png" alt="BMTH" />
             <div class="card-hover-overlay">
-              <span class="card-title">BMTH</span>
-              <button class="card-view-btn" onclick="window.open('BMTH.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">BMTH</span>
+                <button class="card-view-btn" onclick="window.open('BMTH.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -59,17 +66,21 @@
           <a href="luna.png" target="_blank" class="card-hover-container">
             <img src="luna.png" alt="Luna" />
             <div class="card-hover-overlay">
-              <span class="card-title">Luna</span>
-              <button class="card-view-btn" onclick="window.open('luna.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Luna</span>
+                <button class="card-view-btn" onclick="window.open('luna.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
         <div class="masonry-item">
           <a href="sema1.png" target="_blank" class="card-hover-container">
-            <img src="sema1.png" alt="Sema 1" />
+            <img src="sema1.png" alt="Semaphore" />
             <div class="card-hover-overlay">
-              <span class="card-title">Sema 1</span>
-              <button class="card-view-btn" onclick="window.open('sema1.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Semaphore</span>
+                <button class="card-view-btn" onclick="window.open('sema1.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -77,8 +88,10 @@
           <a href="glassed.png" target="_blank" class="card-hover-container">
             <img src="glassed.png" alt="Glassed" />
             <div class="card-hover-overlay">
-              <span class="card-title">Glassed</span>
-              <button class="card-view-btn" onclick="window.open('glassed.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Glassed</span>
+                <button class="card-view-btn" onclick="window.open('glassed.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -86,8 +99,10 @@
           <a href="cadcacas.png" target="_blank" class="card-hover-container">
             <img src="cadcacas.png" alt="Cadcacas" />
             <div class="card-hover-overlay">
-              <span class="card-title">Black</span>
-              <button class="card-view-btn" onclick="window.open('cadcacas.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Black</span>
+                <button class="card-view-btn" onclick="window.open('cadcacas.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -95,8 +110,10 @@
           <a href="glass.jfif" target="_blank" class="card-hover-container">
             <img src="glass.jfif" alt="Glass" />
             <div class="card-hover-overlay">
-              <span class="card-title">Glass</span>
-              <button class="card-view-btn" onclick="window.open('glass.jfif','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Glass</span>
+                <button class="card-view-btn" onclick="window.open('glass.jfif','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -104,17 +121,21 @@
           <a href="wave.jfif" target="_blank" class="card-hover-container">
             <img src="wave.jfif" alt="Wave" />
             <div class="card-hover-overlay">
-              <span class="card-title">Wave</span>
-              <button class="card-view-btn" onclick="window.open('wave.jfif','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Wave</span>
+                <button class="card-view-btn" onclick="window.open('wave.jfif','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
         <div class="masonry-item">
-          <a href="niji.png" target="_blank" class="card-hover-container">
-            <img src="niji.png" alt="Niji" />
+          <a href="cj.jfif" target="_blank" class="card-hover-container">
+            <img src="cj.jfif" alt="Niji" />
             <div class="card-hover-overlay">
-              <span class="card-title">Niji</span>
-              <button class="card-view-btn" onclick="window.open('niji.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Cj</span>
+                <button class="card-view-btn" onclick="window.open('cj.jfif','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -122,8 +143,10 @@
           <a href="orocan_sample.jpg" target="_blank" class="card-hover-container">
             <img src="orocan_sample.jpg" alt="Orocan" />
             <div class="card-hover-overlay">
-              <span class="card-title">Orocan</span>
-              <button class="card-view-btn" onclick="window.open('orocan_sample.jpg','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Orocan</span>
+                <button class="card-view-btn" onclick="window.open('orocan_sample.jpg','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -131,8 +154,10 @@
           <a href="surfer.png" target="_blank" class="card-hover-container">
             <img src="surfer.png" alt="Surfer" />
             <div class="card-hover-overlay">
-              <span class="card-title">Silver Surfer</span>
-              <button class="card-view-btn" onclick="window.open('surfer.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Silver Surfer</span>
+                <button class="card-view-btn" onclick="window.open('surfer.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -140,8 +165,10 @@
           <a href="TICAP_Cross_Guild.png" target="_blank" class="card-hover-container">
             <img src="TICAP_Cross_Guild.png" alt="TICAP Cross Guild" />
             <div class="card-hover-overlay">
-              <span class="card-title">TICAP Cross Guild</span>
-              <button class="card-view-btn" onclick="window.open('TICAP_Cross_Guild.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">TICAP Cross Guild</span>
+                <button class="card-view-btn" onclick="window.open('TICAP_Cross_Guild.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
@@ -149,8 +176,10 @@
           <a href="STRAYS.png" target="_blank" class="card-hover-container">
             <img src="STRAYS.png" alt="Strays" />
             <div class="card-hover-overlay">
-              <span class="card-title">Strays</span>
-              <button class="card-view-btn" onclick="window.open('STRAYS.png','_blank');event.stopPropagation();return false;">View</button>
+              <div class="card-hover-content">
+                <span class="card-title">Strays</span>
+                <button class="card-view-btn" onclick="window.open('STRAYS.png','_blank');event.stopPropagation();return false;">View</button>
+              </div>
             </div>
           </a>
         </div>
