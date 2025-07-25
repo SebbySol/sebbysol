@@ -2,15 +2,28 @@
 const menuBtn = document.getElementById('menuBtn');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
-menuBtn.addEventListener('click', function(e) {
-  e.stopPropagation();
-  dropdownMenu.classList.toggle('open');
-});
-
-document.addEventListener('click', function(e) {
-  if (dropdownMenu.classList.contains('open')) {
-    dropdownMenu.classList.remove('open');
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  // For every menu button in the document
+  document.querySelectorAll('.simple-nav-menu').forEach(function(menuBtn) {
+    var dropdownMenu = menuBtn.parentElement.querySelector('.dropdown-menu');
+    if (dropdownMenu) {
+      menuBtn.addEventListener('click', function(event) {
+        event.stopPropagation();
+        // Hide all other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(function(menu) {
+          if (menu !== dropdownMenu) menu.style.display = 'none';
+        });
+        // Toggle this one
+        dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+      });
+      // Hide dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!dropdownMenu.contains(event.target) && event.target !== menuBtn) {
+          dropdownMenu.style.display = 'none';
+        }
+      });
+    }
+  });
 });
 
 // Placeholder for future animations (e.g., section reveals) 
