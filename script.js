@@ -88,3 +88,60 @@ if (galleryRow) {
     galleryRow.scrollLeft = scrollLeft - walk;
   });
 } 
+
+// Card Modal Popup Logic
+function getCardInfo(card) {
+  // Try to get info from data attributes, fallback to alt/title
+  const img = card.querySelector('img');
+  return {
+    src: img ? img.src : '',
+    title: card.getAttribute('data-title') || (img ? img.alt : ''),
+    description: card.getAttribute('data-description') || img?.getAttribute('data-description') || img?.alt || ''
+  };
+}
+
+function openCardModal(info) {
+  document.getElementById('modalImage').src = info.src;
+  document.getElementById('modalTitle').textContent = info.title;
+  document.getElementById('modalDescription').textContent = info.description;
+  document.getElementById('cardModal').classList.add('open');
+}
+
+function closeCardModal() {
+  document.getElementById('cardModal').classList.remove('open');
+  document.getElementById('modalImage').src = '';
+  document.getElementById('modalTitle').textContent = '';
+  document.getElementById('modalDescription').textContent = '';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Attach click event to all gallery and masonry cards
+  document.querySelectorAll('.gallery-card, .masonry-item').forEach(function(card) {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function(e) {
+      // Prevent drag/scroll click
+      if (e.target.classList.contains('card-view-btn')) return;
+      // Prevent default link behavior if card is an <a>
+      if (card.tagName.toLowerCase() === 'a') e.preventDefault();
+      e.preventDefault(); // Also prevent for any nested <a>
+      const info = getCardInfo(card);
+      openCardModal(info);
+    });
+    // Also handle the 'View' button
+    const viewBtn = card.querySelector('.card-view-btn');
+    if (viewBtn) {
+      viewBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const info = getCardInfo(card);
+        openCardModal(info);
+      });
+    }
+  });
+
+  // Close modal on close button or background click
+  document.getElementById('cardModalClose').onclick = closeCardModal;
+  document.getElementById('cardModal').onclick = function(e) {
+    if (e.target === this) closeCardModal();
+  };
+}); 
