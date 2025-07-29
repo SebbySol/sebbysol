@@ -37,30 +37,52 @@
       <span class="btn btn-secondary btn-disabled">sebastian</span>
     </div>
     <div class="projects-intro-bottom">
-      <p>Combing aesthetics with<br>everyday functionality</p>
-      <p>Every shape, texture, and shade is carefully chosen to transform the space into a place that inspires and adds value to everyday</p>
+      <p>Every layout, interaction, and pixel is thoughtfully designed to create seamless experiences that engage users and bring ideas to life. I focus on usability and visual clarity to deliver solutions that solve problems and elevate brands.</p>
     </div>
   </section>
+  
+  <!-- About Me Section -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-image-frame">
+      <img src="menew.jfif" alt="Sebastian" class="about-image" />
+    </div>
+    <div class="about-content">
+      <h2 class="about-title">About Me</span></h2>
+      <p>
+        I'm a passionate Graphic Designer, Web Designer and UI/UX enthusiast with 
+        expertise in crafting engaging and user-friendly digital experiences. 
+        Through my projects and internships, I’ve developed expertise in crafting designs 
+        that blend creativity with functionality, using tools like Adobe Photoshop, Figma, 
+        and modern web technologies. From crafting user-friendly interfaces to coding responsive
+        designs, I thrive on creating solutions that not only look good but
+        also work seamlessly. My journey in Graphic and Web Design has
+        equipped me with the tools and mindset to tackle challenges and
+        deliver results that leave a lasting impression. 
+      </p>
+    </div>
+  </div>
+</section>
   
   <section class="gallery-section photoshop-gallery">
     <h2 class="photoshop-title">Photoshop</h2>
     <div class="gallery-row">
-      <div class="gallery-card">
+      <div class="gallery-card" data-title="BMTH" data-description="Bring Me The Horizon Poster">
         <img src="BMTH.png" alt="Bring Me The Horizon Poster" />
       </div>
-      <div class="gallery-card">
+      <div class="gallery-card" data-title="Orocan" data-description="Orocan Poster">
         <img src="orocan_sample.jpg" alt="Orocan Poster" />
       </div>
-      <div class="gallery-card">
+      <div class="gallery-card" data-title="Luna's Birthday" data-description="Luna's Birthday">
         <img src="luna.png" alt="Luna's Birthday" />
       </div>      
-      <div class="gallery-card">
+      <div class="gallery-card" data-title="Orocan" data-description="Orocan Poster">
         <img src="orocan_sample.jpg" alt="Orocan Poster" />
       </div>
-      <div class="gallery-card">
+      <div class="gallery-card" data-title="TICAP Cross Guild" data-description="Stray Poster">
         <img src="TICAP_Cross_Guild.png" alt="Stray Poster" />
       </div>
-      <div class="gallery-card">
+      <div class="gallery-card" data-title="Stray" data-description="Stray">
         <img src="STRAYS.png" alt="Stray" />
       </div>
     </div>
@@ -69,140 +91,129 @@
       <section class="illustrator-section">
         <h2 class="illustrator-title">Illustrator</h2>
         <div class="masonry" style="margin-top: 32px;">
-          <div class="masonry-item">
-            <a href="BMTH.png" target="_blank" class="card-hover-container">
-              <img src="BMTH.png" alt="BMTH" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">BMTH</span>
-                  <button class="card-view-btn" onclick="window.open('BMTH.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="BMTH" data-description="BMTH">
+            <img src="BMTH.png" alt="BMTH" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">BMTH</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="luna.png" target="_blank" class="card-hover-container">
-              <img src="luna.png" alt="Luna" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Luna</span>
-                  <button class="card-view-btn" onclick="window.open('luna.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Luna" data-description="Luna">
+            <img src="luna.png" alt="Luna" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Luna</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="sema1.png" target="_blank" class="card-hover-container">
-              <img src="sema1.png" alt="Semaphore" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Semaphore</span>
-                  <button class="card-view-btn" onclick="window.open('sema1.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Semaphore" data-description="Semaphore">
+            <img src="sema1.png" alt="Semaphore" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Semaphore</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="glassed.png" target="_blank" class="card-hover-container">
-              <img src="glassed.png" alt="Glassed" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Glassed</span>
-                  <button class="card-view-btn" onclick="window.open('glassed.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Glassed" data-description="Glassed">
+            <img src="glassed.png" alt="Glassed" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Glassed</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="cadcacas.png" target="_blank" class="card-hover-container">
-              <img src="cadcacas.png" alt="Cadcacas" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Black</span>
-                  <button class="card-view-btn" onclick="window.open('cadcacas.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Cadcacas" data-description="Black">
+            <img src="cadcacas.png" alt="Cadcacas" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Black</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="glass.jfif" target="_blank" class="card-hover-container">
-              <img src="glass.jfif" alt="Glass" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Glass</span>
-                  <button class="card-view-btn" onclick="window.open('glass.jfif','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Glass" data-description="Glass">
+            <img src="glass.jfif" alt="Glass" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Glass</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="wave.jfif" target="_blank" class="card-hover-container">
-              <img src="wave.jfif" alt="Wave" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Wave</span>
-                  <button class="card-view-btn" onclick="window.open('wave.jfif','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Wave" data-description="Wave">
+            <img src="wave.jfif" alt="Wave" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Wave</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="cj.jfif" target="_blank" class="card-hover-container">
-              <img src="cj.jfif" alt="GTA" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">GTA</span>
-                  <button class="card-view-btn" onclick="window.open('cj.jfif','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="GTA" data-description="GTA">
+            <img src="cj.jfif" alt="GTA" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">GTA</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="orocan_sample.jpg" target="_blank" class="card-hover-container">
-              <img src="orocan_sample.jpg" alt="Orocan" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Orocan</span>
-                  <button class="card-view-btn" onclick="window.open('orocan_sample.jpg','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Orocan" data-description="Orocan">
+            <img src="orocan_sample.jpg" alt="Orocan" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Orocan</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="surfer.png" target="_blank" class="card-hover-container">
-              <img src="surfer.png" alt="Surfer" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Silver Surfer</span>
-                  <button class="card-view-btn" onclick="window.open('surfer.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Surfer" data-description="Silver Surfer">
+            <img src="surfer.png" alt="Surfer" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Silver Surfer</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="TICAP_Cross_Guild.png" target="_blank" class="card-hover-container">
-              <img src="TICAP_Cross_Guild.png" alt="TICAP Cross Guild" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">TICAP Cross Guild</span>
-                  <button class="card-view-btn" onclick="window.open('TICAP_Cross_Guild.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="TICAP Cross Guild" data-description="TICAP Cross Guild">
+            <img src="TICAP_Cross_Guild.png" alt="TICAP Cross Guild" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">TICAP Cross Guild</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
-          <div class="masonry-item">
-            <a href="STRAYS.png" target="_blank" class="card-hover-container">
-              <img src="STRAYS.png" alt="Strays" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Strays</span>
-                  <button class="card-view-btn" onclick="window.open('STRAYS.png','_blank');event.stopPropagation();return false;">View</button>
-                </div>
+          <div class="masonry-item card-hover-container" data-title="Strays" data-description="Strays">
+            <img src="STRAYS.png" alt="Strays" />
+            <div class="card-hover-overlay">
+              <div class="card-hover-content">
+                <span class="card-title">Strays</span>
+                <button class="card-view-btn">View</button>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
-  <script src="script.js"></script>
+
+<!-- Modal for card popup -->
+<div id="cardModal" class="card-modal">
+  <div class="card-modal-content">
+    <span class="card-modal-close" id="cardModalClose">&times;</span>
+    <img id="modalImage" src="" alt="Popup Image" />
+    <div class="card-modal-info">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html> 
