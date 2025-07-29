@@ -226,7 +226,7 @@ body {
 
 /* PROJECTS INTRO - DESKTOP */
 .projects-intro {
-  background: #ff5c00;
+  background: #ff5500;
   color: #000;
   padding: 6vw 3vw 4vw 3vw;
   position: relative;
@@ -240,8 +240,8 @@ body {
 }
 
 .projects-intro-content h2 {
-  font-size: 3vw;
-  font-weight: 700;
+  font-size: 4vw;
+  font-weight: 500;
   margin: 0 0 2vw 0;
   max-width: 60vw;
 }
@@ -264,9 +264,11 @@ body {
 }
 
 .projects-intro-bottom p {
-  font-size: 1.4vw;
-  color: #fff;
-  max-width: 40vw;
+  font-family: 'SFThin', Arial, sans-serif;
+  font-size: 1.7rem;
+  color: #ffffff;
+  font-weight: normal;
+  max-width: 48vw;
 }
 
 /* PHOTOSHOP GALLERY - DESKTOP */
@@ -608,6 +610,19 @@ body {
     justify-content: center;
     align-items: center;
   }
+
+  /* Disable card hover overlay for tablet and below */
+  .card-hover-overlay {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: none !important;
+  }
+  .card-hover-container:hover .card-hover-overlay,
+  .card-hover-container:focus .card-hover-overlay {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    display: none !important;
+  }
 }
 
 /* ========================================
@@ -670,7 +685,7 @@ body {
     color: #fff;
     font-weight: 400;
     position: absolute;
-    bottom: -2rem;
+    bottom: -1.5rem;
     right: 0;
     transform: none;
     margin: 0;
@@ -779,28 +794,30 @@ body {
   .projects-intro-content {
     flex-direction: column;
     gap: 20px;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
   }
 
   .projects-intro-content h2 {
-    font-size: 1.8rem;
+    font-size: 3.8rem;
     max-width: 100%;
-    margin: 0;
+    margin-left: 10px;
     word-wrap: break-word;
   }
 
   .projects-intro-bottom {
     flex-direction: column;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
+    margin-left: 10px;
     box-sizing: border-box;
   }
 
   .projects-intro-bottom p {
     font-size: 1rem;
     max-width: 100%;
+    margin-left: 10px;
     word-wrap: break-word;
   }
 
@@ -813,23 +830,23 @@ body {
   }
 
   .photoshop-title {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0 0 30px 0;
+    font-size: 3rem;
+    text-align: right;
+    margin: 0px 0 40px -20px;
     width: 100%;
     color: #fff;
     font-weight: 500;
   }
 
   .gallery-card {
-    height: 200px;
-    min-width: 200px;
-    max-width: 280px;
+    height: 400px;
+    min-width: 250px;
+    max-width: 320px;
   }
 
   .gallery-row {
     gap: 15px;
-    padding: 0 0 20px 0;
+    padding: 0 30 20px 0;
     width: 100%;
     box-sizing: border-box;
   }
@@ -843,16 +860,16 @@ body {
   }
 
   .illustrator-title {
-    font-size: 2rem;
-    margin: 0 0 30px 0;
-    text-align: center;
+    font-size: 3rem;
+    margin: 5px 0 5px 0;
+    text-align: left;
     width: 100%;
     color: #000;
     font-weight: 600;
   }
 
   .masonry {
-    column-count: 2;
+    column-count: 3;
     column-gap: 10px;
     width: 100%;
     box-sizing: border-box;
@@ -883,13 +900,167 @@ body {
     top: 49%;
   }
 
-  .photoshop-title {
+  .hero {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  /* SECTION TITLES - MOBILE */
+  .hero-title {
+    font-size: 5rem;
+    color: #ff5500;
+    font-weight: 500;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1.1;
+    position: relative;
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  .btn-primary {
+    display: none;
+  }
+
+  .btn-menu {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .btn-menu span:first-child {
+    display: none;
+  }
+
+  .btn-menu .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+  }
+
+  .btn-menu .hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    min-width: 140px;
+    z-index: 10;
+    margin-top: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: none;
+  }
+
+  .dropdown-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .dropdown-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a:active {
+    background: rgba(255,255,255,0.1);
+  }
+
+  /* PROJECTS INTRO - MOBILE */
+  .projects-intro {
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .projects-intro-content {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .projects-intro-content h2 {
     font-size: 2rem;
-    text-align: right;
+    max-width: 90%;
+    margin-left: 0px;
+    word-wrap: break-word;
+  }
+
+  .projects-intro-bottom {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .projects-intro-bottom p {
+    font-size: .83rem;
+    max-width: 100%;
+    margin-left: -10px;
+    margin-right: 0px;
+    margin-top: 30px;
+    word-wrap: break-word;
+  }
+
+  .photoshop-title {
+    font-size: 1.8rem;
+    text-align: left;   
+    margin-left: 25px;
+    margin-bottom: 30px;
   }
 
   .illustrator-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: left;
     color: #000;
     margin-bottom: 0px;
@@ -897,9 +1068,13 @@ body {
 
   /* PHOTOSHOP GALLERY - SMALL MOBILE */
   .gallery-card {
-    height: 180px;
+    height: 280px;
     min-width: 180px;
-    max-width: 250px;
+    max-width: 320px;
+  }
+
+  .gallery-row {
+    margin-left: 20px;
   }
 
   /* ILLUSTRATOR SECTION - SMALL MOBILE */
@@ -908,3 +1083,415 @@ body {
     gap: 1px; 
   }
 }
+
+/* ========================================
+   ABOUT ME SECTION STYLES (ALL SIZES)
+   ======================================== */
+.about-section {
+  background: #ff5500;
+  color: #fff;
+  padding: 64px 0 48px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 8vw;
+}
+.about-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1100px;
+}
+.about-content {
+  max-width: 600px;
+  width: 90vw;
+  text-align: left;
+  margin-left: -75px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+}
+.about-title {
+  font-size: 4rem;
+  color: #000000;
+  font-weight: 500;
+  max-width: 100%;
+  text-align: left;
+  width: 100%;
+}
+.about-image-frame {
+  margin-left: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #181818;
+  border-radius: 18px;
+  padding: 12px;
+  border: 5px solid #ff5500;
+  max-width: 100%;
+  max-height: 100%;
+}
+.about-image {
+  width: 250px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+
+/* ========================================
+   ABOUT ME SECTION - DESKTOP (min-width: 901px)
+   ======================================== */
+   /* Import SFTHIN.otf for About Me heading */
+@font-face {
+  font-family: 'SFThin';
+  src: url('SFTHIN.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Import SFREGULAR.otf for About Me paragraph */
+@font-face {
+  font-family: 'SFRegular';
+  src: url('SFREGULAR.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@media (min-width: 901px) {
+  .about-section {
+    background: #ff5500;
+    color: #fff;
+    padding: 64px 0 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 0;
+    padding-top: 0px;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .about-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    max-width: 100vw;
+    gap: 64px;
+    box-sizing: border-box;
+  }
+  .about-image-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #181818;
+    border-radius: 32px;
+    padding: 0;
+    border: 12px solid #000;
+    box-shadow: none;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 0 0 50px;
+    overflow: hidden;
+  }
+  .about-image {
+    width: 600px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+  }
+  .about-content {
+    flex: 1 1 0;
+    width: 100%;
+    max-width: 900px;
+    text-align: right;
+    margin: 150px 80px 0 0;
+    font-size: 2rem;
+    line-height: 1.3;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  .about-title {
+    font-family: 'SFThin', Arial, sans-serif;
+    font-size: 9rem;
+    font-weight: 500;
+    color: #000;
+    text-align: right;
+    margin: 50px 0 0px 0;
+    letter-spacing: -2px;
+    line-height: 1;
+    position: absolute;
+    top: 45px;
+    right: 80px;
+  }
+  .about-title .about-me-span {
+    font-family: 'SFThin', Arial, sans-serif;
+    font-size: 8rem;
+    color: #000;
+    font-weight: normal;
+    bottom: 50px;
+    margin-left: 16px;
+  }
+  .about-content p {
+    color: #fff;
+    font-size: 1.48rem;
+    text-align: right;
+    bottom: 50px;
+    margin-left: 0px;
+    line-height: 1.5;
+    font-family: 'SFRegular', Arial, sans-serif;
+  }
+}
+
+/* ========================================
+   ABOUT ME SECTION - TABLET (max-width: 900px)
+   ======================================== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .about-section {
+    padding: 48px 0 32px 0;
+    padding-left: 4vw;
+  }
+  .about-inner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .about-title {
+    font-size: 3.2rem;
+    margin-left: 0px;
+  }
+  .about-content {
+    font-size: 1.05rem;
+    max-width: 95vw;
+    margin-left: 10px;
+  }
+  .about-image-frame {
+    margin-left: 24px;
+    max-width: 340px;
+    max-height: 340px;
+    padding: 8px;
+    margin-right: 25px;
+  }
+  .about-image {
+    width: 200px;
+    height: 320px;
+    border-radius: 10px;
+  }
+}
+
+/* ========================================
+   ABOUT ME SECTION - MOBILE (max-width: 600px)
+   ======================================== */
+@media (max-width: 600px) {
+  .about-section {
+    padding: 32px 0 24px 0;
+    padding-left: 2vw;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  .about-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .about-title {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    margin-left: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .about-content {
+    font-size: 0.98rem;
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 20px;
+    max-width: 100vw;
+    margin-left: 0;
+    box-sizing: border-box;
+  }
+  .about-image-frame {
+    margin-left: 100px;
+    margin-top: 18px;
+    align-self: right;
+    max-width: 300px;
+    max-height: 300px;
+    padding: 6px;
+    box-sizing: border-box;
+  }
+  .about-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ========================================
+   CARD MODAL POPUP STYLES (ALL SIZES)
+   ======================================== */
+.card-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.card-modal.open {
+  display: flex;
+}
+.card-modal-content {
+  background: #181818;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 0 24px 0;
+}
+.card-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+.card-modal-close:hover {
+  color: #ff5500;
+}
+.card-modal-content img {
+  width: 100%;
+  object-fit: contain;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background: #222;
+}
+.card-modal-info {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+.card-modal-info h3 {
+  margin: 0 0 8px 0;
+  color: #ff5500;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.card-modal-info p {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ========================================
+   CARD MODAL POPUP - DESKTOP (min-width: 901px)
+   ======================================== */
+@media (min-width: 901px) {
+  .about-section {
+    padding-top: 0;
+  }
+  .card-modal-content {
+    width: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 0 0 24px 0;
+  }
+  .card-modal-content img {
+    max-height: 300px;
+  }
+  .card-modal-info {
+    padding: 18px 24px 0 24px;
+  }
+  .card-modal-close {
+    top: 12px;
+    right: 18px;
+    font-size: 2rem;
+  }
+}
+
+/* ========================================
+   CARD MODAL POPUP - TABLET (max-width: 900px)
+   ======================================== */
+@media (max-width: 900px) and (min-width: 601px) {
+  .card-modal-content {
+    width: 80vw;
+    max-width: 80vw;
+    max-height: 80vh;
+    padding: 0 0 18px 0;
+  }
+  .card-modal-content img {
+    max-height: 220px;
+  }
+  .card-modal-info {
+    padding: 14px 16px 0 16px;
+  }
+  .card-modal-close {
+    top: 8px;
+    right: 14px;
+    font-size: 1.7rem;
+  }
+  .card-modal-info h3 {
+    font-size: 1.1rem;
+  }
+  .card-modal-info p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================================
+   CARD MODAL POPUP - MOBILE (max-width: 600px)
+   ======================================== */
+@media (max-width: 600px) {
+  .card-modal-content {
+    width: 95vw;
+    max-width: 95vw;
+    max-height: 90vh;
+    padding: 0 0 12px 0;
+  }
+  .card-modal-content img {
+    max-height: 160px;
+  }
+  .card-modal-info {
+    padding: 10px 8px 0 8px;
+  }
+  .card-modal-close {
+    top: 4px;
+    right: 8px;
+    font-size: 1.3rem;
+  }
+  .card-modal-info h3 {
+    font-size: 1rem;
+  }
+  .card-modal-info p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
