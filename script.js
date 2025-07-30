@@ -87,6 +87,67 @@ if (galleryRow) {
     isDragging = true;
     galleryRow.scrollLeft = scrollLeft - walk;
   });
+}
+
+// Click-and-drag horizontal scroll for Figma gallery
+const figmaGalleryRow = document.querySelector('.figma-gallery-row');
+if (figmaGalleryRow) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let isDragging = false;
+
+  figmaGalleryRow.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    isDown = true;
+    isDragging = false;
+    figmaGalleryRow.classList.add('dragging');
+    startX = e.pageX - figmaGalleryRow.offsetLeft;
+    scrollLeft = figmaGalleryRow.scrollLeft;
+  });
+  figmaGalleryRow.addEventListener('mouseleave', () => {
+    isDown = false;
+    isDragging = false;
+    figmaGalleryRow.classList.remove('dragging');
+  });
+  figmaGalleryRow.addEventListener('mouseup', () => {
+    isDown = false;
+    isDragging = false;
+    figmaGalleryRow.classList.remove('dragging');
+  });
+  figmaGalleryRow.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const x = e.pageX - figmaGalleryRow.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    isDragging = true;
+    figmaGalleryRow.scrollLeft = scrollLeft - walk;
+  });
+  // Prevent text selection while dragging
+  figmaGalleryRow.addEventListener('click', (e) => {
+    if (isDragging) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    isDragging = false;
+  }, true);
+  // Touch support
+  figmaGalleryRow.addEventListener('touchstart', (e) => {
+    isDown = true;
+    isDragging = false;
+    startX = e.touches[0].pageX - figmaGalleryRow.offsetLeft;
+    scrollLeft = figmaGalleryRow.scrollLeft;
+  });
+  figmaGalleryRow.addEventListener('touchend', () => {
+    isDown = false;
+    isDragging = false;
+  });
+  figmaGalleryRow.addEventListener('touchmove', (e) => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX - figmaGalleryRow.offsetLeft;
+    const walk = (x - startX) * 1.2;
+    isDragging = true;
+    figmaGalleryRow.scrollLeft = scrollLeft - walk;
+  });
 } 
 
 // Card Modal Popup Logic
@@ -116,7 +177,7 @@ function closeCardModal() {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Attach click event to all gallery and masonry cards
-  document.querySelectorAll('.gallery-card, .masonry-item').forEach(function(card) {
+  document.querySelectorAll('.gallery-card, .masonry-item, .figma-gallery-card').forEach(function(card) {
     card.style.cursor = 'pointer';
     card.addEventListener('click', function(e) {
       // Prevent drag/scroll click
