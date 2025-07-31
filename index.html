@@ -9,6 +9,14 @@
 </head>
 
 <body>        
+  <!-- Loading Screen - Mobile & Tablet Only -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader">
+      <div class="loader-text">Loading...</div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
   <header class="hero">
     <div class="hero-content">
       <h1 class="hero-title">Portfolio</h1>
@@ -63,6 +71,73 @@
     </div>
   </div>
 </section>
+
+<!-- Technical Skills and Soft Skills Section -->
+<section class="skills-section" id="skills">
+  <div class="skills-inner">    
+    <div class="skills-content">
+      <div class="technical-skills">
+        <h3 class="skills-subtitle">Technical Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h4>Adobe Photoshop</h4>
+            <p>Advanced photo editing, digital art, and graphic design</p>
+          </div>
+          <div class="skill-item">
+            <h4>Adobe Illustrator</h4>
+            <p>Vector graphics, logo design, and illustration</p>
+          </div>
+          <div class="skill-item">
+            <h4>Figma</h4>
+            <p>UI/UX design, prototyping, and collaborative design</p>
+          </div>
+          <div class="skill-item">
+            <h4>HTML & CSS</h4>
+            <p>Responsive web design and front-end development</p>
+          </div>
+          <div class="skill-item">
+            <h4>JavaScript</h4>
+            <p>Interactive web elements and dynamic functionality</p>
+          </div>
+          <div class="skill-item">
+            <h4>UI/UX Design</h4>
+            <p>User interface design and user experience optimization</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="soft-skills">
+        <h3 class="skills-subtitle">Soft Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h4>Creativity</h4>
+            <p>Innovative thinking and artistic problem-solving</p>
+          </div>
+          <div class="skill-item">
+            <h4>Communication</h4>
+            <p>Clear client communication and team collaboration</p>
+          </div>
+          <div class="skill-item">
+            <h4>Time Management</h4>
+            <p>Efficient project planning and deadline adherence</p>
+          </div>
+          <div class="skill-item">
+            <h4>Problem Solving</h4>
+            <p>Analytical thinking and creative solutions</p>
+          </div>
+          <div class="skill-item">
+            <h4>Adaptability</h4>
+            <p>Quick learning and embracing new technologies</p>
+          </div>
+          <div class="skill-item">
+            <h4>Attention to Detail</h4>
+            <p>Precision in design and quality assurance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   
   <section class="gallery-section photoshop-gallery">
     <h2 class="photoshop-title">Photoshop</h2>
@@ -81,6 +156,62 @@
       </div>
       <div class="gallery-card" data-title="Stray" data-description="Stray">
         <img src="STRAYS.png" alt="Stray" />
+      </div>
+    </div>
+  </section>
+
+  <section class="figma-section">
+    <h2 class="figma-title">Figma</h2>
+    <div class="figma-gallery">
+      <div class="figma-gallery-row">
+        
+        <div class="figma-gallery-card card-hover-container" data-title="Harvest2Home" data-description="Harvest2Home seeks to connect farmers directly to
+        consumers. The purpose of building Harvest2Home is
+        to address challenges such as limited market
+        access for farmers, inefficiencies in the supply
+        chain, and the increasing demand for transparency
+        and sustainability in food sourcing.">
+          <img src="harvest.jpg" alt="Harvest2Home" />
+          <div class="card-hover-overlay">
+            <div class="card-hover-content">
+              <span class="card-title">Harvest2Home</span>
+              <button class="card-view-btn">View</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="figma-gallery-card card-hover-container" data-title="TQC" data-description="
+        TQC (The Queens Clinic) was built to modernize the clinic's operations by transitioning from
+        traditional paper-based methods to a more efficient digital system. As the
+        Web Designer and Front-end Developer, I was responsible for designing
+        the user interfaces (UI) for both the client side and admin side of the
+        system. My role involved creating intuitive, user-friendly designs that
+        made it easy for staff to navigate the system and for patients to manage
+        their appointments.">
+          <img src="TQC.jpg" alt="TQC" />
+          <div class="card-hover-overlay">
+            <div class="card-hover-content">
+              <span class="card-title">TQC</span>
+              <button class="card-view-btn">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="figma-gallery-card card-hover-container" data-title="Rakk Gears" data-description="
+        For our e-commerce project, we chose Rakk Gears as
+        our client and designed a sample website to showcase
+        their innovative gaming products. I focused on creating
+        sleek visuals and a user-friendly interface to highlight
+        their commitment to delivering exceptional gear for the
+        gaming community.">
+          <img src="rakk.jpg" alt="Rakk Gears" />
+          <div class="card-hover-overlay">
+            <div class="card-hover-content">
+              <span class="card-title">Rakk Gears</span>
+              <button class="card-view-btn">View</button>
+            </div>
+          </div>
+        </div>            
       </div>
     </div>
   </section>
@@ -210,63 +341,14 @@
           </div>
 
         </div>
-      </section>
+      </section>      
 
-      <section class="figma-section">
-        <h2 class="figma-title">Figma</h2>
-        <div class="figma-gallery">
-          <div class="figma-gallery-row">
-            
-            <div class="figma-gallery-card card-hover-container" data-title="Harvest2Home" data-description="Harvest2Home seeks to connect farmers directly to
-            consumers. The purpose of building Harvest2Home is
-            to address challenges such as limited market
-            access for farmers, inefficiencies in the supply
-            chain, and the increasing demand for transparency
-            and sustainability in food sourcing.">
-              <img src="harvest.jpg" alt="Harvest2Home" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Harvest2Home</span>
-                  <button class="card-view-btn">View</button>
-                </div>
-              </div>
-            </div>
-            
-            <div class="figma-gallery-card card-hover-container" data-title="TQC" data-description="
-            TQC (The Queens Clinic) was built to modernize the clinic's operations by transitioning from
-            traditional paper-based methods to a more efficient digital system. As the
-            Web Designer and Front-end Developer, I was responsible for designing
-            the user interfaces (UI) for both the client side and admin side of the
-            system. My role involved creating intuitive, user-friendly designs that
-            made it easy for staff to navigate the system and for patients to manage
-            their appointments.">
-              <img src="TQC.jpg" alt="TQC" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">TQC</span>
-                  <button class="card-view-btn">View</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="figma-gallery-card card-hover-container" data-title="Rakk Gears" data-description="
-            For our e-commerce project, we chose Rakk Gears as
-            our client and designed a sample website to showcase
-            their innovative gaming products. I focused on creating
-            sleek visuals and a user-friendly interface to highlight
-            their commitment to delivering exceptional gear for the
-            gaming community.">
-              <img src="rakk.jpg" alt="Rakk Gears" />
-              <div class="card-hover-overlay">
-                <div class="card-hover-content">
-                  <span class="card-title">Rakk Gears</span>
-                  <button class="card-view-btn">View</button>
-                </div>
-              </div>
-            </div>            
-          </div>
-        </div>
-      </section>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p class="footer-copyright">Copyright © 2024 SebbySol. All rights Reserved</p>
+  </div>
+</footer>
 
 <!-- Modal for card popup -->
 <div id="cardModal" class="card-modal">
