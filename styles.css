@@ -1,3 +1,74 @@
+/* LOADING SCREEN - MOBILE & TABLET ONLY */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff5500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* From Uiverse.io by Satwinder04 */ 
+.loader {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loader-text {
+  font-size: 24px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  align-self: center;
+  font-family: 'SFPro', Arial, sans-serif;
+  font-weight: 600;
+}
+
+.loader-bar {
+  width: 30%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  animation: loader-bar-animation 2s ease-in-out infinite;
+}
+
+@keyframes loader-bar-animation {
+  0% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+
+  50% {
+    /* transform: translateX(100%) rotate(-90deg); */
+    transform: translateX(100%);
+  }
+
+  100% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+}
+
+/* Hide loading screen on desktop */
+@media (min-width: 901px) {
+  .loading-screen {
+    display: none !important;
+  }
+}
+
 /* ========================================
    SEB PORTFOLIO - CSS ORGANIZATION
    ========================================
@@ -43,7 +114,10 @@ html, body {
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, Arial, sans-serif, "Edge";
-  background: none;
+  background-size: cover;
+  background: #ff5500;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: #fff;
   width: 100%;
   max-width: 100%;
@@ -67,22 +141,22 @@ body {
 }
 
 .photoshop-title {
-  color: #fff;
-  font-size: 4vw;
+  color: #000000;
+  font-size: 5vw;
   font-weight: 500;
-  text-align: left;
-  margin: 0vw 0vw 3vw 0vw;
+  text-align: center;
+  margin: 0vw 0vw 4.5vw 0vw;
   padding-right: 2vw;
   position: relative;
   z-index: 10;
 }
 
 .illustrator-title {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'SFPro', Arial, sans-serif;
   font-size: 5vw;
   font-weight: 600;
   color: #000;
-  margin: 50px 0 15px 70px;
+  margin: 50px 0px 15px 0px;
 }
 
 /* HERO SECTION - DESKTOP */
@@ -230,7 +304,7 @@ body {
 
 /* PROJECTS INTRO - DESKTOP */
 .projects-intro {
-  background: #ff5500;
+  background: none;
   color: #000;
   padding: 6vw 3vw 4vw 3vw;
   position: relative;
@@ -254,8 +328,9 @@ body {
   background: #000;
   color: #fff;
   font-size: 1.2rem;
-  border-radius: 2em;
-  padding: 0.7em 2.5em;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  padding: .7em 2.5em;
   font-weight: 400;
   margin-top: 1vw;
 }
@@ -277,11 +352,12 @@ body {
 
 /* PHOTOSHOP GALLERY - DESKTOP */
 .photoshop-gallery {
-  background-image: url(neww.png);
+  background: none;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  padding: 5vw 0vw 6vw 5vw;
+  padding: 4.5vw 0vw 5vw 0vw;
+  margin-right: 0px;
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -291,66 +367,48 @@ body {
 .gallery-row {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 2vw;
-  overflow-x: auto !important;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 0vw 2.7vw 2vw 0vw;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4.5vw 2vw 4.5vw;
   z-index: 1000;
-  cursor: grab;
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
-.gallery-row.dragging {
-  cursor: grabbing;
-  user-select: none;
-}
+/* Gallery row styles */
 
 .gallery-card {
-  flex: 0 0 auto;
-  min-width: 250px;
-  max-width: 600px;
-  display: inline-block;
-  height: 400px;
+  flex: 1 1 18%;
+  min-width: 200px;
+  max-width: 450px;
+  display: block;
+  height: 350px;
+  width: 350px;
   background: none;
   border-radius: 1vw;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  scroll-snap-align: start;
+  box-shadow: none;
 }
 
 .gallery-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit:fill;
   display: block;
 }
 
 .gallery-card:hover {
-  color: #ff5c00;
+  color: #ff5500;
 }
 
 .gallery-row .gallery-card:last-child {
-  margin-right: 6vw !important;
+  margin-right: 0 !important;
 }
 
-/* Hide scrollbar for webkit browsers */
-.gallery-row::-webkit-scrollbar {
-  height: 12px;
-  background: #222;
-}
-
-.gallery-row::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 6px;
-}
-
+/* Gallery row styles */
 .gallery-row {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -361,116 +419,19 @@ body {
   position: relative;
   width: 100%;
   max-width: 100%;
-  background: #f45a06;
+  background: #ff5500;
+  padding-bottom: 50px;
+  padding-left: 70px;
+  padding-right: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   overflow-x: hidden;
-}
-
-/* FIGMA SECTION - DESKTOP */
-.figma-section {
-  background-image: url(neww.png);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  padding: 5vw 0vw 6vw 5vw;
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.figma-title {
-  font-family: 'SF Pro', Arial, sans-serif;
-  font-size: 4rem;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 40px 0px;
-  letter-spacing: -1px;
-}
-
-.figma-gallery {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.figma-gallery-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 2vw;
-  overflow-x: auto !important;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 0vw 2.7vw 2vw 0vw;
-  z-index: 1000;
-  cursor: grab;
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.figma-gallery-row.dragging {
-  cursor: grabbing;
-  user-select: none;
-}
-
-.figma-gallery-card {
-  flex: 0 0 auto;
-  min-width: 250px;
-  max-width: 600px;
-  display: inline-block;
-  height: 350px;
-  background: none;
-  border-radius: 1vw;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  scroll-snap-align: start;
-}
-
-.figma-gallery-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.figma-gallery-card:hover {
-  color: #ff5c00;
-}
-
-.figma-gallery-row .figma-gallery-card:last-child {
-  margin-right: 6vw !important;
-}
-
-/* Hide scrollbar for webkit browsers */
-.figma-gallery-row::-webkit-scrollbar {
-  height: 12px;
-  background: #222;
-}
-
-.figma-gallery-row::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 6px;
-}
-
-.figma-gallery-row {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Ensure Figma section doesn't have extra spacing */
-.figma-section * {
   box-sizing: border-box;
 }
+
+
 
 .illustrator-view-more {
   position: absolute;
@@ -481,13 +442,13 @@ body {
   color: #111;
   text-decoration: none;
   font-weight: 400;
-}
+} 
 
 .masonry {
   column-count: 5;
   column-gap: .5em;
-  width: 100%;
-  max-width: 100%;
+  width: calc(100% - 70px);
+  max-width: calc(100% - 70px);
   margin: 0;
   padding-left: 0;
   padding-right: 0;
@@ -680,6 +641,20 @@ body {
   }
 
   /* ILLUSTRATOR SECTION - TABLET */
+  .illustrator-section {
+    padding: 50px 30px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #ff5500;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   .illustrator-title {
     font-size: 3.5rem;
     margin: 35px 0 0 20px;
@@ -687,9 +662,15 @@ body {
   
   .masonry { 
     column-count: 3; 
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   
-  .masonry-item {
+    .masonry-item {
     break-inside: avoid;
     margin-bottom: .2em;
     background: #000;
@@ -697,26 +678,112 @@ body {
     border-radius: 10px;
     overflow: hidden;
   }
-
+  
   /* FIGMA SECTION - TABLET */
+  .figma-section {
+    background-image: url(neww.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 400px;
+    padding: 4vw 0vw 5vw 4vw;
+    border-radius: 0% 100% 100% 50% / 0% 0% 0% 100%;
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .figma-title {
+    font-family: 'SF Pro', Arial, sans-serif;
     font-size: 3rem;
-    margin: 35px 0 0 20px;
+    text-align: right;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 100px 30px 0px;
+    letter-spacing: 1px;
   }
   
   .figma-gallery {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   .figma-gallery-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 4vw;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0vw 2vw 2vw 0vw;
+    z-index: 1000;
+    cursor: grab;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .figma-gallery-row.dragging {
+    cursor: grabbing;
+    user-select: none;
   }
   
   .figma-gallery-card {
+    flex: 0 0 auto;
     height: 260px;
     min-width: 200px;
     max-width: 320px;
+    display: inline-block;
+    background: none;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: none;
+    scroll-snap-align: start;
+  }
+
+  .figma-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .figma-gallery-card:hover {
+    color: #ff5500;
+  }
+
+  .figma-gallery-row .figma-gallery-card:last-child {
+    margin-right: 8vw !important;
+  }
+
+  /* Hide scrollbar for webkit browsers */
+  .figma-gallery-row::-webkit-scrollbar {
+    height: 8px;
+    background: #222;
+  }
+
+  .figma-gallery-row::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .figma-gallery-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Ensure Figma section doesn't have extra spacing */
+  .figma-section * {
+    box-sizing: border-box;
   }
 
   /* NAVIGATION - TABLET */
@@ -755,6 +822,34 @@ body {
     opacity: 0 !important;
     pointer-events: none !important;
     display: none !important;
+  }
+
+  /* FOOTER - TABLET */
+  .footer {
+    background: #000;
+    color: #fff;
+    padding: 30px 20px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+  }
+
+  .footer-content {
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-copyright {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 0;
+    text-align: center;
   }
 }
 
@@ -978,8 +1073,11 @@ body {
   }
 
   .gallery-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
-    padding: 0 30 20px 0;
+    margin-left: 9px;
+    padding: 0 20px 20px 20px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -988,8 +1086,15 @@ body {
   .illustrator-section {
     padding: 40px 20px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    background: #ff5500;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
   .illustrator-title {
@@ -1005,7 +1110,11 @@ body {
     column-count: 3;
     column-gap: 10px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .masonry-item {
@@ -1018,37 +1127,139 @@ body {
 
   /* FIGMA SECTION - MOBILE */
   .figma-section {
-    padding: 40px 20px;
+    background-image: url(neww.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 380px;
+    padding: 3vw 0vw 4vw 3vw;
+    border-radius: 0;
+    position: relative;
     width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    max-width: 100%;
+    overflow-x: hidden;
     box-sizing: border-box;
-    overflow: hidden;
   }
 
   .figma-title {
-    font-size: 2.5rem;
-    margin: 5px 0 20px 0;
-    text-align: left;
-    width: 100%;
+    font-family: 'SF Pro', Arial, sans-serif;
+    font-size: 3rem;
+    text-align: right;
+    font-weight: 500;
     color: #fff;
-    font-weight: 600;
+    margin: 30px 40px 20px 0px;
+    letter-spacing: 1px;
   }
 
   .figma-gallery {
     position: relative;
     width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .figma-gallery-row {
-    gap: 15px;
-    padding: 0 30px 20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 25px;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 50px 20px 0;
+    z-index: 1000;
+    cursor: grab;
+    border-radius: 0;
+    margin-left: 30px;
+    scroll-behavior: smooth;
+    white-space: nowrap;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
   }
 
+  .figma-gallery-row.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
   .figma-gallery-card {
+    flex: 0 0 auto;
     height: 200px;
+    width: 500px;
     min-width: 250px;
     max-width: 320px;
+    display: inline-block;
+    background: none;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  .figma-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .figma-gallery-card:hover {
+    color: #ff5500;
+  }
+
+  .figma-gallery-row .figma-gallery-card:last-child {
+    margin-right: 8vw !important;
+  }
+
+  /* Hide scrollbar for webkit browsers */
+  .figma-gallery-row::-webkit-scrollbar {
+    height: 6px;
+    background: #222;
+  }
+
+  .figma-gallery-row::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  .figma-gallery-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Ensure Figma section doesn't have extra spacing */
+  .figma-section * {
+    box-sizing: border-box;
+  }
+
+  /* FOOTER - MOBILE */
+  .footer {
+    background: #000;
+    color: #fff;
+    padding: 25px 15px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+  }
+
+  .footer-content {
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-copyright {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #fff;
+    margin: 0;
+    text-align: center;
   }
 } 
 
@@ -1212,7 +1423,7 @@ body {
   }
 
   .projects-intro-bottom p {
-    font-size: .83rem;
+    font-size: .93rem;
     max-width: 100%;
     margin-left: -10px;
     margin-right: 0px;
@@ -1221,9 +1432,10 @@ body {
   }
 
   .photoshop-title {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     text-align: left;   
-    margin-left: 25px;
+    color: #000;
+    margin-left: 20px;
     margin-bottom: 30px;
   }
 
@@ -1236,19 +1448,160 @@ body {
 
   /* PHOTOSHOP GALLERY - SMALL MOBILE */
   .gallery-card {
-    height: 280px;
-    min-width: 180px;
-    max-width: 320px;
+    height: 250px;
+    width: 100%;
+    max-width: none;
+    min-width: auto;
   }
 
   .gallery-row {
-    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 15px 15px 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  /* ILLUSTRATOR SECTION - SMALL MOBILE */
+    /* ILLUSTRATOR SECTION - SMALL MOBILE */
   .masonry {
     column-count: 2;
-    gap: 1px; 
+    gap: 1px;
+  }
+
+  /* FIGMA SECTION - SMALL MOBILE */
+  .figma-section {
+    background-image: url(neww.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 300px;
+    padding: 2vw 0vw 3vw 2vw;
+    border-radius: 0;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .figma-title {
+    font-family: 'SF Pro', Arial, sans-serif;
+    font-size: 2.5rem;
+    text-align: left;
+    font-weight: 500;
+    color: #fff;
+    margin: 25px 40px 25px 15px;
+    letter-spacing: 1px;
+  }
+
+  .figma-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .figma-gallery-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 15px;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 20px 15px 0;
+    z-index: 1000;
+    cursor: grab;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: 15px;
+  }
+
+  .figma-gallery-row.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  .figma-gallery-card {
+    flex: 0 0 auto;
+    height: 150px;
+    min-width: 180px;
+    max-width: 280px;
+    display: inline-block;
+    background: none;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: none;
+  }
+
+  .figma-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .figma-gallery-card:hover {
+    color: #ff5500;
+  }
+
+  .figma-gallery-row .figma-gallery-card:last-child {
+    margin-right: 6vw !important;
+  }
+
+  /* Hide scrollbar for webkit browsers */
+  .figma-gallery-row::-webkit-scrollbar {
+    height: 4px;
+    background: #222;
+  }
+
+  .figma-gallery-row::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+  }
+
+  .figma-gallery-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Ensure Figma section doesn't have extra spacing */
+  .figma-section * {
+    box-sizing: border-box;
+  }
+
+  /* FOOTER - SMALL MOBILE */
+  .footer {
+    background: #000;
+    color: #fff;
+    padding: 20px 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  .footer-content {
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-copyright {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #fff;
+    margin: 0;
+    text-align: center;
   }
 }
 
@@ -1262,7 +1615,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+    justify-content: center;
   padding-left: 8vw;
 }
 .about-inner {
@@ -1420,6 +1773,251 @@ body {
     line-height: 1.5;
     font-family: 'SFRegular', Arial, sans-serif;
   }
+
+  /* SKILLS SECTION - DESKTOP */
+  .skills-section {
+    background-size: cover;
+    background-image: url(neww.png);
+    background-attachment: fixed;
+    display: flex;
+    background-repeat: no-repeat;
+    padding: 60px 0 100px 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-inner {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
+  .skills-content {
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+  }
+
+  .technical-skills,
+  .soft-skills {
+    flex: 1;
+  }
+
+  .skills-subtitle {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 50px 0;
+    text-align: center;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 85, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .skill-item h4 {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ff5500;
+    margin: 0 0 10px 0;
+  }
+
+  .skill-item p {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin: 0;
+  }
+
+  /* FIGMA SECTION - DESKTOP */
+  .figma-section {
+    height: 500px;
+    padding: 5vw 0vw 6vw 5vw;
+    background-color: #000;
+    border-radius: 0% 100% 100% 50% / 0% 0% 0% 100%;
+    position: relative;
+    width: 100%;
+    margin-top: -40px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .figma-title {
+    font-family: 'SF Pro', Arial, sans-serif;
+    font-size: 5rem;
+    text-align: right;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 140px 40px 0px;
+    letter-spacing: 1px;
+  }
+
+  .figma-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .figma-gallery-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5vw;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    width: 1292px;
+    height: 354px; 
+    border-radius: 0 0 0 285px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0vw 2.7vw 2vw 0vw;
+    z-index: 1000;
+    cursor: grab;
+    margin-left: 100px;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .figma-gallery-row.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  .figma-gallery-card {
+    flex: 0 0 auto;
+    min-width: 250px;
+    max-width: 600px;
+    display: inline-block;
+    height: 350px;
+    background: none;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: none;
+    scroll-snap-align: start;
+  }
+
+  .figma-gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .figma-gallery-card:hover {
+    color: #ff5500;
+  }
+
+  .figma-gallery-row .figma-gallery-card:last-child {
+    margin-right: 13vw !important;
+  }
+
+  /* Hide scrollbar for webkit browsers */
+  .figma-gallery-row::-webkit-scrollbar {
+    height: 12px;
+    background: #222;
+  }
+
+  .figma-gallery-row::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+  }
+
+  .figma-gallery-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Ensure Figma section doesn't have extra spacing */
+  .figma-section * {
+    box-sizing: border-box;
+  }
+
+  /* FIGMA CARD HOVER STYLES - DESKTOP */
+  .figma-gallery-card .card-hover-overlay {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 2em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    border-radius: 4px;
+  }
+
+  .figma-gallery-card .card-hover-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 35px;
+  }
+
+  .figma-gallery-card .card-title {
+    font-size: 2em;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+    order: 1;
+  }
+
+  .figma-gallery-card .card-view-btn {
+    background: #fff;
+    color: #111;
+    border: none;
+    border-radius: 2em;
+    padding: 0.7em 1.6em;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s;
+    order: 2;
+  }
+
+  .figma-gallery-card .card-view-btn:hover {
+    background: #ff5500;
+    color: #fff;
+  }
+
+  .figma-gallery-card:hover .card-hover-overlay,
+  .figma-gallery-card:focus .card-hover-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 /* ========================================
@@ -1477,6 +2075,87 @@ body {
     object-position: center;
     object-fit: cover;
   }
+
+  /* SKILLS SECTION - TABLET */
+  .skills-section {
+    background: #000;
+    padding: 60px 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  .skills-title {
+    font-family: 'SFThin', Arial, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 50px 0;
+    letter-spacing: 1px;
+  }
+
+  .skills-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .technical-skills,
+  .soft-skills {
+    width: 100%;
+  }
+
+  .skills-subtitle {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ff5500;
+    margin: 0 0 25px 0;
+    text-align: center;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 85, 0, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .skill-item h4 {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff5500;
+    margin: 0 0 8px 0;
+  }
+
+  .skill-item p {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin: 0;
+  }
 }
 
 /* ========================================
@@ -1484,7 +2163,7 @@ body {
    ======================================== */
 @media (max-width: 600px) {
   .about-section {
-    padding: 32px 0 24px 0;
+    padding: 30px 0 24px 0;
     padding-left: 2vw;
     width: 100vw;
     max-width: 100vw;
@@ -1502,33 +2181,102 @@ body {
     font-size: 2.5rem;
     margin-bottom: 12px;
     margin-left: 0;
+    text-align: left;
     width: 100%;
     box-sizing: border-box;
   }
   .about-content {
-    font-size: 0.98rem;
-    width: 100vw;
-    padding-left: 10px;
-    padding-right: 20px;
+    font-size: 1rem;
+    text-align: left;
+    width: 90vw;
+    font-family: 'SFRegular', Arial, sans-serif;
+    padding-left: 20px;
+    padding-right: 2px;
     max-width: 100vw;
     margin-left: 0;
     box-sizing: border-box;
   }
   .about-image-frame {
-    margin-left: 100px;
-    margin-top: 18px;
-    align-self: right;
-    max-width: 300px;
+    margin-left: -15px;
+    margin-top: -20px;
+    align-self: center;
+    max-width: 390px;
     max-height: 300px;
     padding: 6px;
     box-sizing: border-box;
   }
   .about-image {
-    width: 250px;
-    height: 250px;
+    width: 330px;
+    height: 150px;
     border-radius: 8px;
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  /* SKILLS SECTION - MOBILE */
+  .skills-section {
+    background: #ff5500;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-inner {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+
+  .skills-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .technical-skills,
+  .soft-skills {
+    width: 100%;
+  }
+
+  .skills-subtitle {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 20px 0;
+    text-align: right;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .skill-item {
+    background: rgb(0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 18px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-item h4 {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ff5500;
+    margin: 0 0 6px 0;
+  }
+
+  .skill-item p {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #ccc;
+    margin: 0;
   }
 }
 
@@ -1663,6 +2411,34 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  /* FOOTER - DESKTOP ONLY */
+  .footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+  }
+
+  .footer-content {
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-copyright {
+    font-family: 'SFRegular', Arial, sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+    text-align: center;
+  }
 }
 
 /* ========================================
@@ -1699,17 +2475,22 @@ body {
    ======================================== */
 @media (max-width: 600px) {
   .card-modal-content {
-    width: 95vw;
-    max-width: 95vw;
-    max-height: 90vh;
-    padding: 0 0 12px 0;
+    width: 98vw;
+    max-width: 98vw;
+    max-height: 95vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
   .card-modal-content img {
-    max-height: 160px;
+    max-height: 300px;
+    width: 100%;
+    object-fit: contain;
     background-color: #ffffff;
   }
   .card-modal-info {
-    padding: 10px 8px 0 8px;
+    padding: 15px 20px 20px 20px;
+    flex: 1;
   }
   .card-modal-close {
     top: 4px;
@@ -1717,19 +2498,17 @@ body {
     font-size: 1.3rem;
   }
   .card-modal-info h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: left;
-    padding-left: 30px;
-    padding-right: 15px;
-    padding-bottom: 10px;
-    padding-top: 20px;
+    margin: 0 0 10px 0;
+    color: #000;
   }
   .card-modal-info p {
-    font-size: .85rem;
+    font-size: 1rem;
     text-align: left;
-    padding-left: 30px;
-    padding-right: 15px;
-    padding-bottom: 30px;
+    line-height: 1.4;
+    color: #333;
+    margin: 0;
   }
 }
 
