@@ -3,6 +3,24 @@ const menuBtn = document.getElementById('menuBtn');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Loading Screen Functionality - Mobile & Tablet Only
+  const loadingScreen = document.getElementById('loadingScreen');
+  const isMobileOrTablet = window.innerWidth <= 900;
+  
+  if (loadingScreen && isMobileOrTablet) {
+    // Show loading screen for 5 seconds
+    setTimeout(() => {
+      loadingScreen.classList.add('hidden');
+      // Remove from DOM after fade out
+      setTimeout(() => {
+        loadingScreen.remove();
+      }, 500);
+    }, 5000);
+  } else if (loadingScreen) {
+    // Hide immediately on desktop
+    loadingScreen.style.display = 'none';
+  }
+
   // For every menu button in the document
   document.querySelectorAll('.simple-nav-menu').forEach(function(menuBtn) {
     var dropdownMenu = menuBtn.parentElement.querySelector('.dropdown-menu');
