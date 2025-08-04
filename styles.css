@@ -1529,7 +1529,6 @@ body {
     /* ILLUSTRATOR SECTION - SMALL MOBILE */
   .masonry {
     column-count: 2;
-    gap: 1px;
   }
 
   /* FIGMA SECTION - SMALL MOBILE */
