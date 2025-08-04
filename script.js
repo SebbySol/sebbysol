@@ -8,11 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const isMobileOrTablet = window.innerWidth <= 900;
   
   if (loadingScreen && isMobileOrTablet) {
+    // Add loading class to body to prevent scrolling
+    document.body.classList.add('loading');
+    
     // Show loading screen for 5 seconds
     setTimeout(() => {
       loadingScreen.classList.add('hidden');
-      // Remove from DOM after fade out
+      // Remove loading class and loading screen after fade out
       setTimeout(() => {
+        document.body.classList.remove('loading');
         loadingScreen.remove();
       }, 500);
     }, 5000);
@@ -42,6 +46,28 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  // Burger menu functionality for tablet
+  const burger = document.getElementById('burger');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  
+  if (burger && dropdownMenu) {
+    burger.addEventListener('change', function() {
+      if (this.checked) {
+        dropdownMenu.style.display = 'block';
+      } else {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+    
+    // Hide dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!dropdownMenu.contains(event.target) && event.target !== burger) {
+        dropdownMenu.style.display = 'none';
+        burger.checked = false;
+      }
+    });
+  }
 });
 
 // Placeholder for future animations (e.g., section reveals) 
