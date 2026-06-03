@@ -122,15 +122,6 @@ I’m passionate about turning ideas into **functional, scalable, and user-focus
 <br>
 
 <br>
-
-
-<!-- Visitor Counter -->
-<br>
-<div align="center" style="display: flex; align-items: center; justify-content: center;">
-    <img src="https://media.tenor.com/sNIbebDwG_EAAAAM/dedsec.gif" width="30">
-    <img alt="visitors counter" src="https://views-counter.vercel.app/badge?pageId=SebbySol%2FViews-Counter">
-    <img src="https://media.tenor.com/sNIbebDwG_EAAAAM/dedsec.gif" width="30">
-</div>
 <br>
 <br>
 <img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
