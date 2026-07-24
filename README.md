@@ -83,7 +83,7 @@ I’m passionate about turning ideas into **functional, scalable, and user-focus
     <td width="50%">
       <h3 align="center">Portfolio</h3>
       <div align="center">
-         <a href="https://sebbysol.github.io/webportfolio/" target="_blank">
+         <a href="https://sebbysol-portfolio.vercel.app/" target="_blank">
             <img src="project-2.jpg" width="500" style="object-fit: cover; cursor: pointer;" alt="sebbysol">
           </a>
         <br><br>
